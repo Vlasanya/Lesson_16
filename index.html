@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_16 (Forms)</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex-big">
+            <form action="" class="form">
+                <h2 class="form__title">Create an Account</h2>
+                <div class="d-flex-small">
+                    <div class="form__group">
+                        <label for="fname" class="form__label">First Name</label>
+                        <input type="text" id="fname" class="form__imput">
+                        
+        
+                    </div>
+                    <div class="form__group">
+                        <label for="lname" class="form__label">Last Name</label>
+                        <input type="text" id="lname" class="form__imput">
+                     </div>
+    
+                </div>
+                <div class="form__group form__group-email ">
+                    
+                    <label for="email" class="form__label ">E-mail</label>
+                    <input type="email" name="email" id="email" class="form__imput">
+                    <p>We'll never share your email with anyone else.</p>
+                </div>
+                <div class="d-flex-small form__radio">
+                    <label for="male">
+                        <input type="radio" id="male" name="sex" value="Male">
+                        <span></span>
+                        Male
+                    </label>
+                    
+                    <label for="female">
+                        <input type="radio" id="female" name="sex" value="Female">
+                        <span></span>
+                        Female
+                    </label>
+                    
+                </div>
+               
+    
+    
+                <div class="d-flex-small">
+                    <div class="form__group select-wrapper">
+                        <label for="country" class="form__label">Country</label>
+                        <select name="country" id="country" required="required" class="form__select select">
+                            <option value="" selected disabled>Select</option>
+                            <option value="Ukr">Ukraine</option>
+                            <option value="Fr">France</option>
+                            <option value="Sp">Spain</option>
+                            <option value="USA">United States</option>
+                            <option value="Ch">China</option>
+                            <option value="It">Italy</option>
+                        </select>
+
+                    </div>
+                    
+                    
+
+
+                    <div class="form__group">
+                        <label class="form__label">City</label>
+                        <input type="text" class="form__imput">
+                    </div>
+    
+                </div>
+                
+                <button type="submit" class="form__btn">Sign Up</button>
+                <p class="col">By clicking the 'Sign Up' button, you confirm that you accept our <br> <a href="#">Terms of Use</a>
+                    and <a href="#">Privacy Policy</a> .</p>
+                    <span class="line"></span>
+                <div class="d-flex-small log">
+                    <p>Have an account?</p>
+                    <a href="#">Log In</a>
+                </div>
+                
+
+            </form>
+            <form action="" class="form">
+                <h2 class="form__title">Profile</h2>
+                <div class="grid">
+                    <img src="./assets/img/Image.svg" alt="User img">
+                
+                    <div class="form__group unloud">
+                        <label for="img" class="form__label unloud__label"></label>
+                        <input type="file" id="img" name="img" accept="image/*">
+                    </div>
+
+
+                    <button type="submit" class="btn-basket"></button>
+
+                    <p class="title">Up to 1 MB (300x300 px)</p>
+
+
+
+                </div>
+                
+                <div class="d-flex-small">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Name</label>
+                        <input type="text" id="name" class="form__imput">
+                        
+        
+                    </div>
+                    <div class="form__group">
+                        
+                        <label for="email" class="form__label ">E-mail</label>
+                        <input type="email" name="email" id="email" class="form__imput">
+                    </div>
+
+                </div>
+    
+                <div class="d-flex-small">
+                    <div class="form__group select-wrapper">
+                        <label for="country" class="form__label">Country</label>
+                        <select name="country" id="country" required="required" class="form__select select">
+                            <option value="" selected disabled>Select</option>
+                            <option value="Ukr">Ukraine</option>
+                            <option value="Fr">France</option>
+                            <option value="Sp">Spain</option>
+                            <option value="USA">United States</option>
+                            <option value="Ch">China</option>
+                            <option value="It">Italy</option>
+                        </select>
+
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">City</label>
+                        <input type="text" class="form__imput">
+                    </div>
+    
+                </div>
+
+                <div class="d-flex-small">
+                    <div class="form__group">
+                        <label class="form__label" for="#zip">Zip Code</label>
+                        <input type="number" id="zip" class="form__imput">
+                        
+        
+                    </div>
+                    <div class="form__group">
+                        
+                        <label for="phone" class="form__label ">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required class="form__imput">
+                    </div>
+
+                </div>
+                
+                <button type="submit" class="form__btn form__btn-small">Update</button>
+                
+                
+
+            </form>
+
+        </div>
+        
+
+        
+        
+
+    </div>
+    
+</body>
+</html>

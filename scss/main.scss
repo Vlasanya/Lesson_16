@@ -1,0 +1,292 @@
+@import 'normalize';
+@import 'vars';
+@import 'mixin';
+@import 'extends';
+@import 'fonts';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    max-height: 100vh;
+    max-width: 100vw;
+    font-family: $fontfam-main;
+    font-size: $font-size-main;
+    color: $color-main;
+    background-color: $bg-color-body;
+}
+.container {
+    width: $max-width;
+    margin: 0 auto;
+       
+}
+.d-flex-big {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 55px 135px;
+}
+.form {
+    padding: 35px;
+    max-width: 48%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: $bg-color-cont;
+    @extend %border-radius;
+    
+    &__title {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.33;
+        letter-spacing: -0.4px;
+        color: #1C1C1C;
+    }
+    &__group {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        &-email {
+            width: 100%;
+        }
+    
+    }
+    &__btn {
+        width: 100%;
+        height: 38px;
+        color: #FFF;
+        background-color: $col-focus;
+        font-weight: 500;
+        line-height: 1.47;
+        text-align: center;
+        letter-spacing: -0.1px;
+        @extend %border-radius;
+        @extend %border-focus;
+        
+        &-small {
+            width: 150px;
+            
+        }
+    }
+    a {
+        text-decoration: none;
+        font-family: $font-fam2;
+        font-weight: 400;
+        font-size: 0.87rem;
+        line-height: 1.38;
+        text-align: center;
+        letter-spacing: -0.1px;
+        color: #007BFF;
+    }
+    img {
+        width: 80px;
+        height: 80px;
+        grid-area: img;
+    }
+    &__group-email p {
+        font-weight: 400;
+        font-size: 0.87rem;
+        line-height: 1.38;
+        letter-spacing: -0.1px;
+        color: #969696;
+    }
+    &__imput,
+    &__select {
+        width: 100%;
+        padding: 8px 10px;
+        @extend %border;
+        background-color: transparent;
+        transition: 0.3s;
+        @extend %border-radius;
+       
+        &:focus-visible {
+            outline: none;
+            box-shadow:  0 0 1px 1px $col-focus;
+        }
+    }
+    &__radio {
+        label {
+            display: flex;
+            margin-bottom: 8px;
+
+            input {
+                opacity: 0;
+                margin-left: -13px;
+
+                &:checked ~ span::after {
+                    opacity: 1;
+                }
+            }
+
+            span {
+                position: relative;
+                width: 20px;
+                height: 20px;
+                border: 1px solid $border-col;
+                border-radius: 50%;
+                margin-right: 8px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    left: -1px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    box-shadow: 0 0 1px 5px $col-focus inset;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+   
+}
+.select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    padding: 8px 40px 8px 10px;
+    cursor: pointer;
+    width: 100%;
+    &::-ms-expand {
+        display: none;
+    }
+    &-wrapper {
+        position: relative;
+    
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            // transform: translateY(-50%);
+            display: block;
+            width: 28px;
+            height: 36px;
+            pointer-events: none;
+            background-image: url(../assets/img/Arrow_Double.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+.d-flex-small {
+    display: flex;
+    gap: 12px;
+}
+.line {
+    display: block;
+    width: 100%;
+    @extend %border-bot;
+    
+}
+
+
+.btn-basket {
+    width: 30px;
+    height: 30px;
+    margin-left: -10px;
+    border: 1px solid $border-col;
+    @extend %border-radius;
+    background-image: url(../assets/img/basket.svg); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FFFFFF;
+    grid-area: basket;
+    &:hover {
+        @extend %border-focus;
+    }
+
+}
+.col {
+    color: #969696;
+    text-align: center;
+}
+.log {
+    justify-content: center;
+    align-items: baseline;
+    & a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.47;
+        text-align: center;
+        letter-spacing: -0.1px;
+        color: $col-focus;
+    }
+    & p {
+        letter-spacing: -0.2px;
+    }
+}
+
+
+
+// =================================================>
+.grid {
+    display: grid;
+    grid-template-columns: 80px 140px 30px;
+    grid-template-rows: repeat(2, 40px);
+    grid-column-gap: 20px;
+    grid-template-areas: 
+    'img unloud basket'
+    'img title title';
+
+   
+}
+.unloud {
+    grid-area: unloud;
+    position: relative;
+    width: 100%;
+    @extend %border;
+    @extend %border-radius;
+    height: 30px;
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        // transform: translateY(-50%);
+        display: block;
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+        background-image: url(../assets/img/Photo_Camera.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    & input {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        padding: 8px 40px 8px 10px;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0;
+        &::-ms-expand {
+            display: none;
+        }
+    
+    }
+    &:hover {
+        @extend %border-focus;
+    }
+}
+
+.title {
+    grid-area: title;
+    font-size: 0.87rem;
+    line-height: 1.38;
+    letter-spacing: -0.1px;
+    color: #969696;
+}
