@@ -479,6 +479,15 @@ html, body {
   cursor: pointer;
   width: 100%;
 }
+.select:required:invalid {
+  color: #545454;
+}
+.select option[value=""][disabled] {
+  display: none;
+}
+.select option {
+  color: #000;
+}
 .select::-ms-expand {
   display: none;
 }
